@@ -1,0 +1,2 @@
+[07-Mar-2018 16:40:46 Asia/Jakarta] PHP Notice:  Undefined variable: obj in C:\xampp\htdocs\turboly\getTaskToday.php on line 17
+[07-Mar-2018 16:40:46 Asia/Jakarta] PHP Fatal error:  Call to a member function formatDbDate() on null in C:\xampp\htdocs\turboly\getTaskToday.php on line 17

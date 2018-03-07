@@ -1,0 +1,21 @@
+RewriteEngine On
+ 
+## EXPIRES CACHING ##
+<IfModule mod_expires.c>
+ExpiresActive Off
+</IfModule>
+## EXPIRES CACHING ##
+
+
+#RewriteCond %{HTTPS} !=on
+#RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+ 
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+RewriteRule ^list$ list.php  [NC,L] 
+RewriteRule ^profile$ profile.php  [NC,L] 
+RewriteRule ^logout$ logout.php  [NC,L]  
+RewriteRule ^employeeList$ employeeList.php  [NC,L] 
+RewriteRule ^employeeForm$ employeeForm.php  [NC,L]  
+RewriteRule ^taskList$ taskList.php  [NC,L] 
+RewriteRule ^taskForm$ taskForm.php  [NC,L] 
