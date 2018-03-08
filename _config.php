@@ -36,6 +36,7 @@
 
 
     // ERROR LOG
+    /*
 	$path = $DOC_ROOT.'log/'; 
 	if (!file_exists($path)) {
 		mkdir($path, 0755, true);
@@ -47,7 +48,7 @@
 	ini_set('log_errors', 1);
 	ini_set('error_log', $filename ); 
 	date_default_timezone_set('Asia/Jakarta');
-	   
+	*/
  	  
     // END OF ERROR LOG
 	  
