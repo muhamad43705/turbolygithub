@@ -124,7 +124,7 @@ else
 
 ?>
     
-<body  style="background-color:#dedede; background-size:cover;   background-repeat: no-repeat;  background-position: center;" background="<?php echo $bgImage; ?>"> 
+<body  style="background-color:#dedede; background-size:cover;   background-repeat: no-repeat;  background-position: center;"> 
 <div id="body-login"> 
     <div class="login-panel-background"></div>
     <div style="padding:1em;">    
