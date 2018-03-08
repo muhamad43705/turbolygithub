@@ -226,7 +226,7 @@ function BaseClass(){
             
             
             $rsStatus = $this->getStatusById ($newStatus); 
-            $this->setTransactionLog('changestatus',$id,$rsStatus[0]['status']);
+            //$this->setTransactionLog('changestatus',$id,$rsStatus[0]['status']);
             
 			$this->oDbCon->endTrans();  
 	
