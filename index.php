@@ -8,6 +8,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Turboly - Challenge</title> 
+<link rel="stylesheet" type="text/css" href="https://pacific-dawn-76413.herokuapp.com/include/css/adminStyle.css">
+</head>
 
 <body  style="background-color:#dedede; background-size:cover;   background-repeat: no-repeat;  background-position: center;" background="<?php echo $bgImage; ?>"> 
 <div id="body-login"> 
