@@ -82,7 +82,7 @@ class Task extends BaseClass{
 			 
 		    $this->oDbCon->execute($sql);  
 			
-            $this->setTransactionLog('add',$pkey);
+            //$this->setTransactionLog('add',$pkey);
             
 			$this->oDbCon->endTrans(); 
 			$this->addErrorList($arrayToJs,true,$this->lang['dataHasBeenSuccessfullyUpdated']);   
@@ -130,7 +130,7 @@ class Task extends BaseClass{
 				 
                 $this->oDbCon->execute($sql);                
   
-                $this->setTransactionLog('edit',$arrParam['hidId']);
+                //$this->setTransactionLog('edit',$arrParam['hidId']);
             
 				$this->oDbCon->endTrans();  
 				$this->addErrorList($arrayToJs,true,$this->lang['dataHasBeenSuccessfullyUpdated']);   
