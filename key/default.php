@@ -1,6 +1,6 @@
 <?php 
 $hostname = 'localhost';
-$dbname = 'turboly_challenge';
+$dbname = '';
 $userid ='root';
 $password = '';
 ?>
