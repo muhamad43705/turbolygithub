@@ -3,7 +3,7 @@
 	 
  	$LANG = 'id';
 	
-	$WEB_FOLDER = 'herokuturboly/';
+	$WEB_FOLDER = '/';
     
     $PROTOCOL = 'http';
     if(!empty($_SERVER['HTTPS']))
