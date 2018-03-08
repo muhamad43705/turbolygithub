@@ -238,7 +238,7 @@ class Employee extends BaseClass{
 			$sql = 'delete from  '.$this->tableSecurityAccess.' where userkey = ' . $this->oDbCon->paramString($id);
 			$this->oDbCon->execute($sql);
             
-            $this->setTransactionLog('delete',$id);
+            //$this->setTransactionLog('delete',$id);
 		 
 			$this->oDbCon->endTrans();
 				 
@@ -262,7 +262,7 @@ class Employee extends BaseClass{
 		$arrayToJs = array();
 		$rs = $this->getDataRowById($id);
 		
-		if ($rs[0]['systemVariable'] == 1)  {
+		if ($rs[0]['systemvariable'] == 1)  {
 			$this->addErrorList($arrayToJs,false,'<strong>'.$rs[0]['name'].'</strong>. ' . $this->errorMsg[211]); 
 		} 
 		 		 

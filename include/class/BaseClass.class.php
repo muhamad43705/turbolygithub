@@ -622,14 +622,15 @@ function BaseClass(){
 	{
 		$theCode = '0';
 		$counterValue = '';
-		$sql = 'select code,prefix,counter,digit from  _code, _user_code where code ='.$this->oDbCon->paramString($paramCode) .' and _code.pkey = _user_code.codekey';
+		$sql = 'select _code.pkey as pkeycode,code,prefix,counter,digit from  _code, _user_code where code ='.$this->oDbCon->paramString($paramCode) .' and _code.pkey = _user_code.codekey';
+		
 		$rs=$this->oDbCon->doQuery($sql);
 		if(count($rs)!=0){
 			$format = '%s%0' . $rs[0]['digit'] . 'd';
 			$theCode = sprintf($format, $rs[0]['prefix'], $rs[0]['counter']);
 		}
-		$sql = 'update _user_code, _code set counter='.$this->oDbCon->paramString(($rs[0]['counter'] + 1)).'
-			where code ='.$this->oDbCon->paramString($paramCode) .' and _code.pkey = _user_code.codekey';
+		$sql = 'update _user_code set counter='.$this->oDbCon->paramString(($rs[0]['counter'] + 1)).'
+			where codekey ='.$this->oDbCon->paramString($rs[0]['pkeycode']);
 		$this->oDbCon->execute($sql);
 
 		unset($lastCode);

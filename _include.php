@@ -3,7 +3,7 @@
 $FILE_NAME = basename (  $_SERVER['PHP_SELF'] ,".php");	 
 $classVersion = 'class';
 
-include $DOC_ROOT. 'key/default.php';    
+include $DOC_ROOT. 'key/default-database-config.php';    
 include $DOC_ROOT. 'key/default-config.php';
     
 include $DOC_ROOT. 'include/'.$classVersion.'/BaseClass.class.php'; 

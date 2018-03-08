@@ -5,12 +5,17 @@ class Database {
 	
 	protected $transactionCounter = 0;
 	 
-	function Database($new_userid = '',$new_password = '',$new_dbname = '',$new_hostname = '') { 
+	function Database($new_database = '',$new_userid = '',$new_password = '',$new_dbname = '',$new_hostname = '',$new_port = '') { 
+		global $database;
 		global $dbname;
 		global $userid;
 		global $password;
 		global $hostname;
+		global $port;
 		
+		if (!empty($new_hostname))
+			$hostname = $new_hostname;
+
 		if (!empty($new_userid))
 			$userid = $new_userid;
 			
@@ -20,25 +25,35 @@ class Database {
 		if (!empty($new_dbname))
 			$dbname = $new_dbname;
 			
-		if (!empty($new_hostname))
-			$hostname = $new_hostname;
+		if (!empty($new_database))
+			$database = $new_database;
+
+		if (!empty($new_port))
+			$port = $new_port;
         
      
-		$this->connect($userid,$password,$dbname,$hostname); 
+		$this->connect($userid,$password,$dbname,$hostname,$database,$port); 
 	}
  
-	function connect($userid,$password,$dbname,$hostname){
+	function connect($userid,$password,$dbname,$hostname,$database,$port){
 		 
 		try {
-			$this->con = new PDO('mysql:host='.$hostname.';dbname='.$dbname, $userid, $password);
+			if($database == 'pgsql'){
+				$this->con = new PDO('pgsql:host='.$hostname.';port='.$port.';dbname='.$dbname.';user='.$userid.';password='.$password);
+			}else{
+				$this->con = new PDO('mysql:host='.$hostname.';dbname='.$dbname, $userid, $password);
+			}
+			
 		}
 		catch(PDOException $e) {
+			$this->setLog($e->getMessage());
 			return false;
 		}
 		
 		try {
 			$this->con->setAttribute(PDO::ATTR_AUTOCOMMIT,0);
 			$this->con->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND,'SET time_zone = \'Asia/Jakarta\'');
+			$this->con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		}
 		catch(PDOException $e) {
 			return false;

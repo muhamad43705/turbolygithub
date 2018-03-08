@@ -6,7 +6,10 @@ $arrayToJs = array();
 
 $userkey = $userkey = base64_decode($_SESSION[$class->loginAdminSession]['id']);
 
-$rs = $task->searchData($task->tableName.'.userkey',$userkey,true,' and '.$task->tableName.'.duedate = curdate()');
+$today = date('d / m / Y');
+$today = $class->oDbCon->paramDate($today,' / ');
+
+$rs = $task->searchData($task->tableName.'.userkey',$userkey,true,' and '.$task->tableName.'.duedate = '.$today);
 
 $header = '
 	<div class="table-data-list">
