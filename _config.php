@@ -5,8 +5,8 @@
 	
 	$WEB_FOLDER = '/';
     
-    $PROTOCOL = 'http';
-    if(!empty($_SERVER['HTTPS']))
+    //$PROTOCOL = 'http';
+    //if(!empty($_SERVER['HTTPS']))
      $PROTOCOL = 'https';
     
 	$HTTP_HOST =  $PROTOCOL . '://' .$_SERVER ['HTTP_HOST'] ;
