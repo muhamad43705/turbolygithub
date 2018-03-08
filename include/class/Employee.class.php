@@ -79,7 +79,7 @@ class Employee extends BaseClass{
 			$arrParam['hidId'] = $pkey;
 			$this->createDetail($arrParam);
 			
-            $this->setTransactionLog('add',$pkey);
+            //$this->setTransactionLog('add',$pkey);
             
 			$this->oDbCon->endTrans();
 					 
@@ -138,7 +138,7 @@ class Employee extends BaseClass{
 			if (empty($arrParam['updateProfile'])) 
                 $this->createDetail($arrParam);
           
-            $this->setTransactionLog('edit',$arrParam['hidId']);
+            //$this->setTransactionLog('edit',$arrParam['hidId']);
             
 			$this->oDbCon->endTrans();  
 			$this->addErrorList($arrayToJs,true,$this->lang['dataHasBeenSuccessfullyUpdated']);   
