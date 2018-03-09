@@ -31,6 +31,8 @@
     $replacements = array('','-');
     $DOMAIN_NAME = str_replace($patterns, $replacements, $DOMAIN_NAME);
 
+    date_default_timezone_set('Asia/Jakarta');
+
     // FOR DEVELOPMENT
     //include '_development.php';  
 
