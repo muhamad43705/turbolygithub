@@ -1,15 +1,12 @@
 <?php  
-	error_reporting(E_ALL);
-	ini_set("display_errors", 1);
-
 	session_start();  
 	 
  	$LANG = 'id';
 	
-	$WEB_FOLDER = '';
+	$WEB_FOLDER = 'herokugithub/';
     
-    //$PROTOCOL = 'http';
-    //if(!empty($_SERVER['HTTPS']))
+    $PROTOCOL = 'http';
+    if(!empty($_SERVER['HTTPS']))
      $PROTOCOL = 'https';
     
 	$HTTP_HOST =  $PROTOCOL . '://' .$_SERVER ['HTTP_HOST'] ;
@@ -38,7 +35,7 @@
 
 
     // ERROR LOG
-    /*
+  
 	$path = $DOC_ROOT.'log/'; 
 	if (!file_exists($path)) {
 		mkdir($path, 0755, true);
@@ -50,7 +47,7 @@
 	ini_set('log_errors', 1);
 	ini_set('error_log', $filename ); 
 	date_default_timezone_set('Asia/Jakarta');
-	*/
+	
  	  
     // END OF ERROR LOG
 	  

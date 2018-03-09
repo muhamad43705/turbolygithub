@@ -190,7 +190,7 @@ class Database {
 	}
 	
 	function setLog($msg){
-		/*
+		
 		$docRoot = $_SERVER ['DOCUMENT_ROOT'] ;
 		if(substr($docRoot,-1) <> "/") {
 			$docRoot .= '/';
@@ -205,9 +205,7 @@ class Database {
 		$filename = $path.md5($docRoot).'.txt'; 
 				   
 		error_log ($msg.chr(13),3,$filename);
-		*/
-
-		error_log($msg);
+		
 		 
 	}
 	
